@@ -36,6 +36,15 @@ class VerusLightClient : NSObject {
             reject(String(JsonRpcErrors.INTERNAL_ERROR), "Failed to derive spending keys.", error)
         }
     }
+
+    @objc
+    func deterministicSeedBytes(_ seed: String, resolver resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
+        do {
+            try resolve(Mnemonic.deterministicSeedBytes(from: seed))
+        } catch {
+            reject(String(JsonRpcErrors.INTERNAL_ERROR), "Failed to derive seed bytes.", error)
+        }
+    }
     
     @objc
     func createWallet(_ coinId: String, coinProto: String, accountHash: String, address: String, port: Int, numAddresses: Int, viewingKeys: [String], birthday: Int, resolver resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {

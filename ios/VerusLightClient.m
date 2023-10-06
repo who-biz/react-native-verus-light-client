@@ -86,6 +86,14 @@ RCT_EXTERN_METHOD(
 // Export methods to a native module
 // https://facebook.github.io/react-native/docs/native-modules-ios.html#exporting-swift
 RCT_EXTERN_METHOD(
+                  deterministicSeedBytes: (NSString *)seed
+                  resolver: (RCTPromiseResolveBlock)resolve
+                  rejecter: (RCTPromiseRejectBlock)reject
+                  )
+
+// Export methods to a native module
+// https://facebook.github.io/react-native/docs/native-modules-ios.html#exporting-swift
+RCT_EXTERN_METHOD(
                   startSync: (NSString *)coinId
                   coinProto: (NSString *)coinProto
                   accountHash: (NSString *)accountHash
