@@ -15,7 +15,7 @@ class VerusLightClientModule(reactContext: ReactApplicationContext) :
 
     private val networks = mapOf("mainnet" to ZcashNetwork.Mainnet, "testnet" to ZcashNetwork.Testnet)
 
-    override fun getName() = "VerusLightClient"
+    override fun getName() = "VerusLightClientAndroid"
 
     @ReactMethod
     fun testReactMethod(msg: String) {
