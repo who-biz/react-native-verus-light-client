@@ -6,6 +6,8 @@ import com.facebook.react.bridge.ReactContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
 
+import android.util.Log;
+
 class VerusLightClientModule(reactContext: ReactApplicationContext) :
     ReactContextBaseJavaModule(reactContext) {
 
@@ -14,6 +16,11 @@ class VerusLightClientModule(reactContext: ReactApplicationContext) :
     private val networks = mapOf("mainnet" to ZcashNetwork.Mainnet, "testnet" to ZcashNetwork.Testnet)
 
     override fun getName() = "VerusLightClient"
+
+    @ReactMethod
+    fun testReactMethod(msg: String) {
+        Log.d.("VerusLightClient Android Module", "testReactMethodCalled with msg: $msg")
+    }
 
 }
 
