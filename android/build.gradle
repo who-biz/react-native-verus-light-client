@@ -1,0 +1,56 @@
+buildscript {
+  def kotlinVersion = rootProject.ext.has('kotlinVersion')
+    ? rootProject.ext.get('kotlinVersion')
+    : '1.8.22'
+
+  repositories {
+    mavenCentral()
+    google()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:7.3.1'
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
+  }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+def safeExtGet(prop, fallback) {
+  rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
+android {
+  compileSdkVersion safeExtGet('compileSdkVersion', 32)
+  defaultConfig {
+    minSdkVersion safeExtGet('minSdkVersion', 27)
+    targetSdkVersion safeExtGet('targetSdkVersion', 32)
+  }
+  lintOptions {
+    abortOnError false
+  }
+  namespace 'com.veruslightclientandroid'
+  ndkVersion '26.1.10909125'
+  buildToolsVersion '31.0.0'
+}
+
+repositories {
+  maven {
+    url('../node_modules/react-native/android')
+  }
+  google()
+  mavenCentral()
+}
+
+dependencies {
+  implementation "com.facebook.react:react-native:0.68.5"
+
+  // Compiler plugin for Room annotation support:
+  kapt 'androidx.room:room-compiler:2.3.0'
+
+  implementation 'androidx.appcompat:appcompat:1.4.1'
+  implementation 'androidx.paging:paging-runtime-ktx:2.1.2'
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3"
+}
