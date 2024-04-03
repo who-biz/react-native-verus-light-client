@@ -19,7 +19,7 @@ class VerusLightClientModule(reactContext: ReactApplicationContext) :
 
     @ReactMethod
     fun testReactMethod(msg: String) {
-        Log.d.("VerusLightClient Android Module", "testReactMethodCalled with msg: $msg")
+        Log.d.("com.veruslightclientandroid", "msg: $msg")
     }
 
 }
