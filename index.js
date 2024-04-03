@@ -1,6 +1,6 @@
 import { NativeModules, Platform } from 'react-native';
 
-const { VerusLightClient } = NativeModules;
+const { VerusLightClient, VerusLightClientAndroid } = NativeModules;
 
 export default {
   ...VerusLightClient,

@@ -8,7 +8,7 @@ import com.facebook.react.bridge.ReactMethod
 
 import android.util.Log;
 
-class VerusLightClientModule(reactContext: ReactApplicationContext) :
+class VerusLightClientAndroid(reactContext: ReactApplicationContext) :
     ReactContextBaseJavaModule(reactContext) {
 
     private var synchronizerMap = mutableMapOf<String, SdkSynchronizer>()

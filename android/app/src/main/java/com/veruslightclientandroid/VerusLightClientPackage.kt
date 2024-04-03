@@ -1,16 +1,29 @@
 package com.veruslightclientandroid;
 
-import com.facebook.react.ReactPackage
-import com.facebook.react.bridge.NativeModule
-import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.uimanager.ViewManager
-import java.util.Collections.emptyList
+import com.facebook.react.ReactPackage;
+import com.facebook.react.bridge.NativeModule;
+import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.uimanager.ViewManager;
 
-class VerusLightClientAndroidPackage (): ReactPackage {
-    override fun createNativeModules(reactContext: ReactApplicationContext) =
-        listOf<NativeModule>(
-            VerusLightClientModule(reactContext),
-        )
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-    override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> = emptyList()
+public class VerusLightClientAndroidPackage implements ReactPackage {
+
+   @Override
+   public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
+       return Collections.emptyList();
+   }
+
+   @Override
+   public List<NativeModule> createNativeModules(
+           ReactApplicationContext reactContext) {
+       List<NativeModule> modules = new ArrayList<>();
+
+       modules.add(new VerusLightClientAndroid(reactContext));
+
+       return modules;
+   }
+
 }
