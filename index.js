@@ -18,3 +18,5 @@ export default {
     })
   }
 };
+
+export default VerusLightClientAndroid;
