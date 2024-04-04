@@ -1,4 +1,4 @@
-package com.veruslightclient;
+package com.verusmobile.veruslightclient;
 
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
