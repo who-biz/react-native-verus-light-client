@@ -19,4 +19,4 @@ export class VerusLightClient {
   }
 };
 
-export class VerusLightClientAndroid;
+export class VerusLightClientAndroidPackage;
