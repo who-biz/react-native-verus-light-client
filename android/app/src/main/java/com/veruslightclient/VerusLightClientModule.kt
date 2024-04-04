@@ -1,4 +1,4 @@
-package com.veruslightclientandroid;
+package com.veruslightclient;
 
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
@@ -8,18 +8,18 @@ import com.facebook.react.bridge.ReactMethod
 
 import android.util.Log;
 
-class VerusLightClientAndroid(reactContext: ReactApplicationContext) :
+class VerusLightClient(reactContext: ReactApplicationContext) :
     ReactContextBaseJavaModule(reactContext) {
 
     private var synchronizerMap = mutableMapOf<String, SdkSynchronizer>()
 
     private val networks = mapOf("mainnet" to ZcashNetwork.Mainnet, "testnet" to ZcashNetwork.Testnet)
 
-    override fun getName() = "VerusLightClientAndroid"
+    override fun getName() = "VerusLightClient"
 
     @ReactMethod
     fun testReactMethod(msg: String) {
-        Log.d.("com.veruslightclientandroid", "msg: $msg")
+        Log.d.("com.veruslightclient", "msg: $msg")
     }
 
 }
