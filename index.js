@@ -2,7 +2,7 @@ import { NativeModules, Platform } from 'react-native';
 
 const { VerusLightClient, VerusLightClientAndroid } = NativeModules;
 
-export {
+export class VerusLightClient {
   ...VerusLightClient,
   request: (reqId, method, params) => { // Minor standardization fix due to Java not handling JSON as well as Swift native modules
     return new Promise((resolve, reject) => {
@@ -19,4 +19,4 @@ export {
   }
 };
 
-export VerusLightClientAndroid;
+export class VerusLightClientAndroid;
