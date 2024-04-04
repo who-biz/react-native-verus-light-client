@@ -1,4 +1,4 @@
-package com.veruslightclientandroid;
+package com.veruslightclient;
 
 import android.app.Application;
 import android.content.Context;
@@ -35,7 +35,7 @@ public class MainApplication extends  Application implements ReactApplication {
           // below MyAppPackage is added to the list of packages returned
     // below MyAppPackage is added to the list of packages returned
     // below MyAppPackage is added to the list of packages returned
-    //  packages.add(new VerusLightClientAndroidPackage());
+      packages.add(new VerusLightClientPackage());
       return packages;
     }
 

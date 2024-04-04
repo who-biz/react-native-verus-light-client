@@ -30,7 +30,7 @@ android {
   lintOptions {
     abortOnError false
   }
-  namespace 'com.veruslightclientandroid'
+  namespace 'com.veruslightclient'
   ndkVersion '26.1.10909125'
   buildToolsVersion '31.0.0'
 }
