@@ -9,21 +9,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class VerusLightClientPackage implements ReactPackage {
+class VerusLightClientPackage : ReactPackage {
 
-   @Override
-   public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-       return Collections.emptyList();
-   }
+    override fun createViewManagers(
+        reactContext: ReactApplicationContext
+    ): MutableList<ViewManager<View, ReactShadowNode<*>>> = mutableListOf()
 
-   @Override
-   public List<NativeModule> createNativeModules(
-           ReactApplicationContext reactContext) {
-       List<NativeModule> modules = new ArrayList<>();
-
-       modules.add(new VerusLightClient(reactContext));
-
-       return modules;
-   }
+    override fun createNativeModules(
+        reactContext: ReactApplicationContext
+    ): MutableList<NativeModule> = listOf(VerusLightClient(reactContext)).toMutableList()
 
 }
