@@ -11,9 +11,9 @@ import android.util.Log;
 class VerusLightClient(reactContext: ReactApplicationContext) :
     ReactContextBaseJavaModule(reactContext) {
 
-    private var synchronizerMap = mutableMapOf<String, SdkSynchronizer>()
+//    private var synchronizerMap = mutableMapOf<String, SdkSynchronizer>()
 
-    private val networks = mapOf("mainnet" to ZcashNetwork.Mainnet, "testnet" to ZcashNetwork.Testnet)
+//    private val networks = mapOf("mainnet" to ZcashNetwork.Mainnet, "testnet" to ZcashNetwork.Testnet)
 
     override fun getName() = "VerusLightClient"
 
